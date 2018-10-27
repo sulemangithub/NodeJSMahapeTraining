@@ -17,16 +17,14 @@ const authenticate = function(email,password,callback)
            }
        }
 
-       if(status)
-       {
-           setTimeout(function(){
-                callback({result:status});
-           },1000);
-       }
+       setTimeout(function(){
+            callback({result:status});
+        },1000);
+     
 };
 
 
-authenticate("a","b",function(data){
+authenticate("sachin@gmail.com","pass@123",function(data){
 
     if(data.result)
     {
