@@ -64,4 +64,5 @@ authenticate("sachin@gmail.com","pass@123",function(data){
         console.log("Login failed.");
     }
 
-})
+});
+
