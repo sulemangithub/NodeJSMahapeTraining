@@ -32,17 +32,26 @@ const getUserDetails = function(email,callback)
 };
 
 
+const getDepartmentDetails = function(departmentName,callback)
+{
+    let department = departments.get(departmentName);
 
+    setTimeout(function(){
+        callback(department);
+    },1000);
+}
 
 
 authenticate("sachin@gmail.com","pass@123",function(data){
 
     if(data.result)
     {
-        getUserDetails("sacdfdhin@gmail.com",function(result){
+        getUserDetails("sachin@gmail.com",function(result){
             if(result != null)
             {
-                console.log(result);
+                getDepartmentDetails(result.department,function(department){
+                    console.log(department);
+                });
             }
             else
             {
