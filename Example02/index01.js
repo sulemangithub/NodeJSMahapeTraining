@@ -19,16 +19,36 @@ const authenticate = function(email,password,callback)
 
        setTimeout(function(){
             callback({result:status});
-        },1000);
-     
+        },1000);     
 };
+
+const getUserDetails = function(email,callback)
+{
+    let employee = employees.get(email);
+
+    setTimeout(function(){
+        callback(employee);
+    },1000);
+};
+
+
+
 
 
 authenticate("sachin@gmail.com","pass@123",function(data){
 
     if(data.result)
     {
-        console.log("Login successful");
+        getUserDetails("sacdfdhin@gmail.com",function(result){
+            if(result != null)
+            {
+                console.log(result);
+            }
+            else
+            {
+                console.log("employee not found.")
+            }
+        });
     }
     else
     {
